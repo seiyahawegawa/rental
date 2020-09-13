@@ -4,39 +4,59 @@
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
+|phone number|string|null: false|
+|Street address|string|null: false|
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :groups, through: :groups_users
-- has_many :messags
-- has_many :groups_users
+- has_many : lothes information
+- has_many : rental
 
-## messagesテーブル
+## moneyテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content|text||
-|image|string||
+|payment|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|tweet_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :group
 - belongs_to :user
 
-## groups
+## Clothesinformation
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|price|integer|null: false|
+|title||string|null: false|
+|clothes_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :messages
-- has_many :users, through: :groups_users
-- has_many :groups_users
+- has_many :users, through: :ClothesInformation_users
+- has_many :ClothesInformation_users
 
 
-## groups_users
+# rental
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|clothes_id|integer|null: false, foreign_key: true|
+
+### Association
+- has_many :users, through: :ClothesInformation_users
+- has_many :ClothesInformation_users
+
+# Return
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|clothes_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- has_many :rental
+
+
+## ClothesInformation_users
 |Column|Type|Options|
 |------|----|-------|
 |users_id|integer|null: false, foreign_key: true|
-|groups_id|integer|null: false, foreign_key: true|
+|clothes_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :group
+- belongs_to :ClothesInformation
 - belongs_to :user
