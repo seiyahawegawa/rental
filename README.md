@@ -9,7 +9,7 @@
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many : lothes information
+- has_many : lothesInformation
 - has_many : rental
 
 ## moneyテーブル
@@ -20,7 +20,7 @@
 ### Association
 - belongs_to :user
 
-## Clothesinformation
+## ClothesInformation
 |Column|Type|Options|
 |------|----|-------|
 |price|integer|null: false|
