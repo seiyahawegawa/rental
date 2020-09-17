@@ -21,15 +21,23 @@
     font-size: 20px;
     line-height: 60px;
     text-align: center;
-    &--trash {
+    
+    &--user {
+      color:black;
+      a{
+        text-decoration: none;
+        color: black;
+      }
+    }
+    &--cart {
       color:black;
     }
-    &--cog {
-      color:black;
-    }
-    &--plus {
+    &--search {
       color: black;
     }
+  }
+  a{
+    text-decoration: none;
   }
 }
 .img{

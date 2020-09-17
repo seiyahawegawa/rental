@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'clothesinformations/index'
+  devise_for :users
   root "clothesinformations#index"
-  
+  resources :users, only: [:edit, :update]
 end
