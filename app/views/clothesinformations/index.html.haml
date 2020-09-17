@@ -2,13 +2,14 @@
   Special memories
   .Icons
     .Icons__icon
-      .Icons__icon--trash
-        = icon('fas', 'user')
+      .Icons__icon--user
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'user')
     .Icons__icon
-      .Icons__icon--cog
+      .Icons__icon--cart
         = icon('fas', 'cart-plus')
     .Icons__icon
-      .Icons__icon--plus
+      .Icons__icon--search
         = icon('fas', 'search')
 .img 
   .img__top
